@@ -1,175 +1,230 @@
 body {
-  font-family: "Poppins", sans-serif;
-  background: #386994;
-  margin: 0;
-  color: white;
+    font-family: "Poppins", sans-serif;
+    background: #386994;
+    margin: 0;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header Styles */
 .header {
-  background: #386994;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #386994;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
 }
-
 .nav-links {
-  display: flex;
-  gap: 24px;
-}
-
-.nav-item {
-  color: transparent; /* Make the text fill transparent */
-  text-decoration: none;
-  transition: color 0.3s, -webkit-text-stroke 0.3s; /* Smooth transition for color and outline */
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  -webkit-text-stroke: 1px white; /* Outline the text with white */
-}
-
-.nav-item:hover {
-  color: white; /* Fills the text on hover */
-  -webkit-text-stroke: 0; /* Removes the outline effect on hover */
-}
-
-.nav-item i {
-  margin-right: 8px;
-}
-
+    display: flex;
+    gap: 24px;
+  }
+  
+  .nav-item {
+    color: transparent; /* Make the text fill transparent */
+    text-decoration: none;
+    transition: color 0.3s, -webkit-text-stroke 0.3s; /* Smooth transition for color and outline */
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    -webkit-text-stroke: 1px white; /* Outline the text with white */
+  }
+  
+  .nav-item:hover {
+    color: white; /* Fills the text on hover */
+    -webkit-text-stroke: 0; /* Removes the outline effect on hover */
+  }
+  
+  .nav-item i {
+    margin-right: 8px;
+  }
 /* Main Content Styles */
 .main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 64px 16px;
-  text-align: center;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 16px;
+    width: 100%;
 }
 
 .main-heading {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 50px;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
 }
-
 .playlist-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .playlist-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 16px;
+    border-radius: 12px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border with some transparency */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    cursor: pointer;
+    text-decoration: none;
+    color: white; /* Set text color to white */
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effect */
+    max-width: 240px; /* Set a maximum width */
+    text-align: center; /* Center text and icon */
+  }
+  
+  .playlist-icon {
+    font-size: 3rem; /* Larger icon size */
+    margin-bottom: 12px; /* Space between icon and title */
+  }
+  
+  .playlist-card:hover {
+    transform: translateY(-4px); /* Slight lift effect */
+  }
+  
+  .playlist-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+/* Sound Buttons Grid */
+.sound-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 24px;
+    justify-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.playlist-card {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 16px;
-  border-radius: 12px; /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.5); /* Light border with some transparency */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  cursor: pointer;
-  text-decoration: none;
-  color: white; /* Set text color to white */
-  display: block;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effect */
-  max-width: 240px; /* Set a maximum width */
-  text-align: center; /* Center text and icon */
+.sound-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-.playlist-icon {
-  font-size: 3rem; /* Larger icon size */
-  margin-bottom: 12px; /* Space between icon and title */
+.sound-button {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.playlist-card:hover {
-  transform: translateY(-4px); /* Slight lift effect */
+.sound-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
-.playlist-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 8px;
+.sound-button.active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Noises Section Styles */
-.noises-section {
-  margin-top: 80px;
-  text-align: center;
+.sound-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
 }
 
-.noises-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 90px; /* Space between icons */
-  margin-bottom: 90px;
+.sound-label {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
 }
 
-.noises-icon {
-  text-decoration: none;
-  color: rgb(238, 238, 238); /* Slightly lighter color for icons */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s, transform 0.2s ease;
-  font-size: 2.5rem; /* Larger icon size */
-  width: 80px; /* Fixed width */
-  height: 80px; /* Fixed height */
-  line-height: 1; /* Adjust line height */
+.volume-control {
+    width: 100px;
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+    height: 20px;
 }
 
-.noises-icon:hover {
-  color: white; /* Darker shade on hover */
-  transform: translateY(-4px);
+.volume-control.hidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    pointer-events: none;
 }
 
-.noises-icon i {
-  font-size: 3.5rem; /* Increased the icon size */
-  color: transparent; /* Make the icon fill transparent */
-  -webkit-text-stroke: 2px white; /* Outline thickness */
-  transition: color 0.3s, -webkit-text-stroke 0.3s; /* Smooth transition */
+.volume-slider {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    outline: none;
 }
 
-.noises-icon:hover i {
-  color: white; /* Fills the icon on hover */
-  -webkit-text-stroke: 0; /* Removes the outline effect */
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 
 /* Footer Styles */
 .footer {
-  background-color: #386994;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-  color: white; /* Changed text color to white */
-  padding: 32px 16px;
-  text-align: center;
+    background: #386994;
+    padding: 24px 16px;
+    text-align: center;
+    margin-top: auto;
 }
 
 .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-nav {
-  margin-top: 16px;
+    margin-top: 16px;
 }
 
 .footer-link {
-  color: rgb(225, 223, 223); /* Changed to white */
-  text-decoration: none;
-  margin: 0 16px;
-  transition: color 0.3s;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin: 0 16px;
+    transition: color 0.3s;
 }
 
 .footer-link:hover {
-  color: white;
+    color: white;
 }

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playlists | CalmFlow</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalmFlow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -13,131 +14,81 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <link rel="stylesheet" href="static/style.css" />
-  </head>
-
-  <body class="bg-gray-100 text-gray-900">
-    <!-- Header -->
+</head>
+<body>
     <header class="header">
-      <div class="container">
-        <a href="/" class="logo">CalmFlow</a>
-        <nav class="nav-links">
-          <a href="#" class="nav-item">
-            <i class="fas fa-volume-up"></i>
-          </a>
-          <a href="#" class="nav-item">
-            <i class="fas fa-user"></i>
-          </a>
-        </nav>
-      </div>
+        <div class="container">
+            <a href="/" class="logo">CalmFlow</a>
+            <nav class="nav-links">
+                <a href="#" class="nav-item">
+                  <i class="fas fa-volume-up"></i>
+                </a>
+                <a href="#" class="nav-item">
+                  <i class="fas fa-user"></i>
+                </a>
+              </nav>
+        </div>
     </header>
 
-    <!-- Main Section: Playlists -->
-    <main class="main-content">
-      <h1 class="main-heading">Discover Calming Playlists</h1>
-      <div class="playlist-grid">
-        <a href="#" class="playlist-card">
-          <div class="playlist-icon">
-            <i class="far fa-cog"></i>
-            <!-- Replace with your preferred icon -->
+    <main class="main-content" role="main">
+        <h1 class="main-heading">Discover Calming Playlists</h1>
+        <div class="playlist-grid">
+            <a href="#" class="playlist-card">
+              <div class="playlist-icon">
+                <i class="far fa-cog"></i>
+                <!-- Replace with your preferred icon -->
+              </div>
+              <h2 class="playlist-title">Productivity</h2>
+            </a>
+            <a href="#" class="playlist-card">
+              <div class="playlist-icon">
+                <i class="fas fa-smog"></i>
+                <!-- Replace with your preferred icon -->
+              </div>
+              <h2 class="playlist-title">Random</h2>
+            </a>
+            <a href="#" class="playlist-card">
+              <div class="playlist-icon">
+                <i class="far fa-water"></i>
+                <!-- Replace with your preferred icon -->
+              </div>
+              <h2 class="playlist-title">Noise Blocker</h2>
+            </a>
+            <a href="#" class="playlist-card">
+              <div class="playlist-icon">
+                <i class="far fa-leaf"></i>
+                <!-- Replace with your preferred icon -->
+              </div>
+              <h2 class="playlist-title">Productivity</h2>
+            </a>
           </div>
-          <h2 class="playlist-title">Productivity</h2>
-        </a>
-        <a href="#" class="playlist-card">
-          <div class="playlist-icon">
-            <i class="fas fa-smog"></i>
-            <!-- Replace with your preferred icon -->
-          </div>
-          <h2 class="playlist-title">Random</h2>
-        </a>
-        <a href="#" class="playlist-card">
-          <div class="playlist-icon">
-            <i class="far fa-water"></i>
-            <!-- Replace with your preferred icon -->
-          </div>
-          <h2 class="playlist-title">Noise Blocker</h2>
-        </a>
-        <a href="#" class="playlist-card">
-          <div class="playlist-icon">
-            <i class="far fa-leaf"></i>
-            <!-- Replace with your preferred icon -->
-          </div>
-          <h2 class="playlist-title">Productivity</h2>
-        </a>
-      </div>
-
-      <!-- Noises Icon Section -->
-      <!-- Noises Icon Section -->
-<div class="noises-section">
-  <div class="noises-row">
-    <div class="noises-icon">
-      <i class="fas fa-volume-up"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-wind"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-water"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-fire"></i>
-    </div>
-  </div>
-  <div class="noises-row">
-    <div class="noises-icon">
-      <i class="fas fa-mountain"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-cloud-rain"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-bolt"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-sun"></i>
-    </div>
-  </div>
-  <div class="noises-row">
-    <div class="noises-icon">
-      <i class="fas fa-paw"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-leaf"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-smog"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-snowflake"></i>
-    </div>
-  </div>
-  <div class="noises-row">
-    <div class="noises-icon">
-      <i class="fas fa-drum"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-campground"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-cog"></i>
-    </div>
-    <div class="noises-icon">
-      <i class="fas fa-bicycle"></i>
-    </div>
-  </div>
-</div>
-
+        <section class="noises-section">
+            <div class="sound-buttons-grid">
+                {% for sound in sounds %}
+                <div class="sound-button-container">
+                    <button class="sound-button" data-sound="{{sound.name}}">
+                        <span class="sound-icon">{{ sound.icon }}</span>
+                        <span class="sound-label">{{ sound.display_name }}</span>
+                    </button>
+                    <div class="volume-control hidden">
+                        <input type="range" class="volume-slider" min="0" max="100" value="50">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-      <div class="footer-container">
-        <p>&copy; 2024 CalmFlow. All Rights Reserved.</p>
-        <nav class="footer-nav">
-          <a href="#" class="footer-link">Privacy Policy</a>
-          <a href="#" class="footer-link">Terms of Service</a>
-        </nav>
-      </div>
+        <div class="footer-container">
+            <p>© 2024 CalmFlow. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </nav>
+        </div>
     </footer>
-  </body>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
 </html>
